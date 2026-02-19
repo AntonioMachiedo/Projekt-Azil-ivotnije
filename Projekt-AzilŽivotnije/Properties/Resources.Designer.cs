@@ -69,5 +69,15 @@ namespace Projekt_AzilŽivotnije.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Snimka_zaslona_2026_02_19_184419 {
+            get {
+                object obj = ResourceManager.GetObject("Snimka zaslona 2026-02-19 184419", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

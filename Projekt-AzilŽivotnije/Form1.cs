@@ -29,7 +29,8 @@ namespace Projekt_AzilŽivotnije
 
         private void btn_Izlaz_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
+             
         }
 
         private void btn_Statistika_Click(object sender, EventArgs e)
@@ -40,6 +41,12 @@ namespace Projekt_AzilŽivotnije
         private void btn_Udomljavanje_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Unos_Click(object sender, EventArgs e)
+        {
+            Form f = new FormUnos();
+            f.ShowDialog();
         }
     }
 }

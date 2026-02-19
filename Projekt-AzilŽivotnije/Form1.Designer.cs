@@ -47,6 +47,7 @@
             this.btn_Unos.Text = "Unos Životinje";
             this.btn_Unos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Unos.UseVisualStyleBackColor = false;
+            this.btn_Unos.Click += new System.EventHandler(this.btn_Unos_Click);
             // 
             // btn_Pregled
             // 
