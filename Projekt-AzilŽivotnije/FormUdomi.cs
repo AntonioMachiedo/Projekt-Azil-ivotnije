@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Projekt_AzilŽivotnije
 {
-    public partial class Form4 : Form
+    public partial class FormUdomi : Form
     {
-        public Form4()
+        public FormUdomi()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

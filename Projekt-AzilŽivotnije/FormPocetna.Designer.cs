@@ -53,13 +53,14 @@
             // 
             this.btn_Pregled.BackColor = System.Drawing.SystemColors.Info;
             this.btn_Pregled.Font = new System.Drawing.Font("Myanmar Text", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Pregled.Location = new System.Drawing.Point(24, 137);
+            this.btn_Pregled.Location = new System.Drawing.Point(25, 137);
             this.btn_Pregled.Name = "btn_Pregled";
             this.btn_Pregled.Size = new System.Drawing.Size(301, 65);
             this.btn_Pregled.TabIndex = 1;
             this.btn_Pregled.Text = "Pregled";
             this.btn_Pregled.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Pregled.UseVisualStyleBackColor = false;
+            this.btn_Pregled.Click += new System.EventHandler(this.btn_Pregled_Click);
             // 
             // btn_Filtriranje
             // 

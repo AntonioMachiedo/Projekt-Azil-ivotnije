@@ -48,5 +48,9 @@ namespace Projekt_AzilŽivotnije
             Form f = new FormUnos();
             f.ShowDialog();
         }
+
+        private void btn_Pregled_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

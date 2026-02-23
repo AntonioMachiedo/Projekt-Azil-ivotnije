@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projekt_AzilŽivotnije
 {
-    public partial class Form3 : Form
+    public partial class FormPregled : Form
     {
-        public Form3()
+        public FormPregled()
         {
             InitializeComponent();
         }
