@@ -125,7 +125,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Projekt_AzilŽivotnije.Properties.Resources.Snimka_zaslona_2026_02_09_125738;
-            this.ClientSize = new System.Drawing.Size(578, 462);
+            this.ClientSize = new System.Drawing.Size(585, 489);
             this.Controls.Add(this.btn_Izlaz);
             this.Controls.Add(this.btn_Statistika);
             this.Controls.Add(this.btn_Udomljavanje);

@@ -1,6 +1,6 @@
 ﻿namespace Projekt_AzilŽivotnije
 {
-    partial class Form6
+    partial class FormStatistika
     {
         /// <summary>
         /// Required designer variable.

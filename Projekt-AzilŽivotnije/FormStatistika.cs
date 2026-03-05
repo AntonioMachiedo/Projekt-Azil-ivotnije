@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projekt_AzilŽivotnije
 {
-    public partial class Form6 : Form
+    public partial class FormStatistika : Form
     {
-        public Form6()
+        public FormStatistika()
         {
             InitializeComponent();
         }
