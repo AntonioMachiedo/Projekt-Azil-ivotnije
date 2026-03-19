@@ -24,7 +24,8 @@ namespace Projekt_AzilŽivotnije
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form f = new FormFiltriranje();
+            f.ShowDialog();
         }
 
         private void btn_Izlaz_Click(object sender, EventArgs e)
@@ -35,11 +36,14 @@ namespace Projekt_AzilŽivotnije
 
         private void btn_Statistika_Click(object sender, EventArgs e)
         {
-
+            Form f = new FormStatistika();
+            f.ShowDialog();
         }
 
         private void btn_Udomljavanje_Click(object sender, EventArgs e)
         {
+            Form f = new FormUdomi();
+            f.ShowDialog();
 
         }
 
@@ -51,6 +55,8 @@ namespace Projekt_AzilŽivotnije
 
         private void btn_Pregled_Click(object sender, EventArgs e)
         {
+            Form f = new FormPregled();
+            f.ShowDialog();
         }
     }
 }

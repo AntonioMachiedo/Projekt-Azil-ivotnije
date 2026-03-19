@@ -61,5 +61,10 @@ namespace Projekt_AzilŽivotnije
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Admin.SaveAnimals($"{textBox1.Text};{textBox2.Text};{maskedTextBox1.Text};{(radioButton1.Checked ? "true" : "false")};{(radioButton2.Checked ? "true" : "false")};{txt_Godine.Text};{txt_Spol.Text};{txt_Opis.Text}");
+        }
     }
 }
