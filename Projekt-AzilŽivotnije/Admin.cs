@@ -14,20 +14,25 @@ namespace Projekt_AzilŽivotnije
             using (StreamWriter sw = new StreamWriter("Životinje.txt", true))
             {
                 sw.WriteLine(zapis);
+                sw.Close();
             }
         }
         public static List<string> GetAllAsStrings()
         {
-            List<string> lista = new List<string>();
-            using (StreamReader sr = new StreamReader("Životinje.txt"))
+            List<string> životinje = new List<string>();
+            if (File.Exists("Životinje.txt"))
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader("Životinje.txt"))
                 {
-                    lista.Add(line);
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        životinje.Add(line);
+                    }
                 }
             }
-            return lista;
+            return životinje;
         }
+
     }
 }
