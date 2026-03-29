@@ -64,7 +64,34 @@ namespace Projekt_AzilŽivotnije
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin.SaveAnimals($"{textBox1.Text};{textBox2.Text};{maskedTextBox1.Text};{(radioButton1.Checked ? "true" : "false")};{(radioButton2.Checked ? "true" : "false")}");
+            string ime = textBox1.Text;
+            string vrsta = textBox2.Text;
+            string pasmina = textBox3.Text;
+            string spol = radioButton1.Checked ? "M" : "Ž";
+            int dob = (int)numericUpDown1.Value;
+            string status = "Azil";
+            string putanjaSlike = pictureBox2.ImageLocation;
+            string datumDolaska = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            bool cijepljen = checkBox1.Checked;
+            bool kastriran = checkBox2.Checked;
+            string napomena = textBox4.Text;
+            string id = DateTime.Now.Ticks.ToString().Substring(10);
+            string zapis = $"{id}|{ime}|{vrsta}|{pasmina}|{spol}|{dob}|{status}|{putanjaSlike}|{datumDolaska}|{cijepljen}|{kastriran}|{napomena}||";
+            Admin.Unos(zapis);
+            MessageBox.Show("Životinja je uspješno unesena!");
+            this.Close();
+        }    
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Slike|*.jpg;*.jpeg;*.png;*.bmp";
+            openFileDialog1.Title = "Odaberi sliku životinje";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = openFileDialog1.FileName;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+
         }
     }
 }

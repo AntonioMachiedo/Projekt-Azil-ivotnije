@@ -9,30 +9,126 @@ namespace Projekt_AzilŽivotnije
 {
     public static class Admin
     {
-        public static void SaveAnimals(string zapis)
+
+
+        public static void Unos(string zapis)
         {
-            using (StreamWriter sw = new StreamWriter("Životinje.txt", true))
-            {
-                sw.WriteLine(zapis);
-                sw.Close();
-            }
+            StreamWriter sw = new StreamWriter("azil.txt", true);
+            sw.WriteLine(zapis);
+            sw.Close();
         }
-        public static List<string> GetAllAsStrings()
+        public static void UnosUdomitelja(string zapis)
         {
-            List<string> životinje = new List<string>();
-            if (File.Exists("Životinje.txt"))
+            StreamWriter sw = new StreamWriter("udomitelji.txt", true);
+            sw.WriteLine(zapis);
+            sw.Close();
+        }
+        public static List<string> Ucitaj()
+        {
+            List<string> lista = new List<string>();
+            StreamReader sr = new StreamReader("azil.txt");
+            string linija = sr.ReadLine();
+
+            while (linija != null)
             {
-                using (StreamReader sr = new StreamReader("Životinje.txt"))
+                lista.Add(linija);
+                linija = sr.ReadLine();
+            }
+            sr.Close();
+            return lista;
+
+        }
+        public static List<string> UcitajUdomitelje()
+        {
+            List<string> lista = new List<string>();
+            StreamReader sr = new StreamReader("udomitelji.txt");
+            string linija = sr.ReadLine();
+
+            while (linija != null)
+            {
+                lista.Add(linija);
+                linija = sr.ReadLine();
+            }
+            sr.Close();
+            return lista;
+        }
+        public static List<string> Vrste()
+        {
+            List<string> lista = new List<string>();
+            StreamReader sr = new StreamReader("azil.txt");
+            string linija = sr.ReadLine();
+
+            while (linija != null)
+            {
+                string[] dijelovi = linija.Split('|');
+                string vrsta = dijelovi[1];
+                lista.Add(vrsta);
+                linija = sr.ReadLine();
+            }
+            sr.Close();
+            lista = lista.Distinct().ToList();
+            return lista;
+        }
+        public static List<string> VrsteBroj()
+        {
+            List<string> lista = Ucitaj();
+            List<string> lista2 = Vrste();
+            List<string> lista3 = new List<string>();
+            StreamReader sr = new StreamReader("azil.txt");
+            foreach (string vrsta in lista2)
+            {
+
+                int brojac = 0;
+
+                foreach (string linija in lista)
                 {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
+                    string[] dijelovi = linija.Split('|');
+                    if (dijelovi[1] == vrsta)
                     {
-                        životinje.Add(line);
+                        brojac++;
                     }
                 }
-            }
-            return životinje;
-        }
+                lista3.Add(vrsta + ": " + brojac);
 
+
+            }
+            return lista3;
+        }
+        public static List<string> PronadiPoVrsti(string kriterij)
+        {
+            List<string> lista = new List<string>();
+            StreamReader sr = new StreamReader("azil.txt");
+            string linija = sr.ReadLine();
+            while (linija != null)
+            {
+                string[] dijelovi = linija.Split('|');
+                if (dijelovi[1] == kriterij)
+                {
+                    lista.Add(linija);
+                }
+                linija = sr.ReadLine();
+            }
+            sr.Close();
+            return lista;
+        }
+        public static double ProsjecnaDob()
+        {
+            List<string> lista = new List<string>();
+            StreamReader sr = new StreamReader("azil.txt");
+            string linija = sr.ReadLine();
+            int brojac = 0;
+            int suma = 0;
+            while (linija != null)
+            {
+                string[] dijelovi = linija.Split('|');
+                int dob = int.Parse(dijelovi[4]);
+                suma += dob;
+                brojac++;
+                linija = sr.ReadLine();
+            }
+            sr.Close();
+            double prosjek = (double)suma / brojac;
+            return prosjek;
+        }
     }
 }
