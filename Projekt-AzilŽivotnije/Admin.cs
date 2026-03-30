@@ -86,6 +86,7 @@ namespace Projekt_AzilŽivotnije
         }
         public static List<string> VrsteBroj()
         {
+            
             List<string> lista = Ucitaj();
             List<string> lista2 = Vrste();
             List<string> lista3 = new List<string>();
@@ -98,7 +99,7 @@ namespace Projekt_AzilŽivotnije
                 foreach (string linija in lista)
                 {
                     string[] dijelovi = linija.Split('|');
-                    if (dijelovi[1] == vrsta)
+                    if (dijelovi.Length>2 && dijelovi[2] == vrsta)
                     {
                         brojac++;
                     }
