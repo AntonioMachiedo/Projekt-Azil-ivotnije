@@ -61,5 +61,25 @@ namespace Projekt_AzilŽivotnije
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                DialogResult result = MessageBox.Show("Jeste li sigurni da želite obrisati ovu životinju?", "Potvrda brisanja", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Admin.Obrisi(listBox1.SelectedIndex);
+                    FormPregled_Load(sender, e);
+                    pbSlika.Image = null;
+                    MessageBox.Show("Životinja je uspješno obrisana!");
+                }
+                else
+                {
+                    MessageBox.Show("Molimo odaberite životinju iz liste.");
+                }
+            }
+
+        }
     }
 }

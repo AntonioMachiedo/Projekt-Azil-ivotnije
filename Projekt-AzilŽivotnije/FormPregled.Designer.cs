@@ -40,6 +40,7 @@
             this.lblKastriran = new System.Windows.Forms.Label();
             this.lblNapomena = new System.Windows.Forms.Label();
             this.pbSlika = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(37, 34);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(295, 420);
             this.listBox1.TabIndex = 2;
@@ -152,11 +153,22 @@
             this.pbSlika.TabIndex = 13;
             this.pbSlika.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(365, 394);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(204, 60);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Obrisi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormPregled
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbSlika);
             this.Controls.Add(this.lblNapomena);
             this.Controls.Add(this.lblKastriran);
@@ -169,7 +181,7 @@
             this.Controls.Add(this.lblVrsta);
             this.Controls.Add(this.lblIme);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPregled";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.FormPregled_Load);
@@ -193,5 +205,6 @@
         private System.Windows.Forms.Label lblKastriran;
         private System.Windows.Forms.Label lblNapomena;
         private System.Windows.Forms.PictureBox pbSlika;
+        private System.Windows.Forms.Button button1;
     }
 }

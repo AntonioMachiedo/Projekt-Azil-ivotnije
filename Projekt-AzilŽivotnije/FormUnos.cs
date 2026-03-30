@@ -88,9 +88,14 @@ namespace Projekt_AzilŽivotnije
             openFileDialog1.Title = "Odaberi sliku životinje";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.ImageLocation = openFileDialog1.FileName;
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox2.ImageLocation = openFileDialog1.FileName;
+                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             }
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
         }
     }

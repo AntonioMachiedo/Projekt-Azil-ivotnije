@@ -38,6 +38,21 @@ namespace Projekt_AzilŽivotnije
             return lista;
 
         }
+        public static void Obrisi(int indeks) 
+        {
+            List <string> lista = Ucitaj();
+            if (indeks >= 0 && indeks < lista.Count)
+            {
+                lista.RemoveAt(indeks);
+                StreamWriter sw = new StreamWriter("azil.txt", false);
+                foreach (string redak in lista)
+                {
+                    sw.WriteLine(redak);
+                }
+                sw.Close();
+            }
+        }
+
         public static List<string> UcitajUdomitelje()
         {
             List<string> lista = new List<string>();
@@ -61,7 +76,7 @@ namespace Projekt_AzilŽivotnije
             while (linija != null)
             {
                 string[] dijelovi = linija.Split('|');
-                string vrsta = dijelovi[1];
+                string vrsta = dijelovi[2];
                 lista.Add(vrsta);
                 linija = sr.ReadLine();
             }
@@ -102,7 +117,7 @@ namespace Projekt_AzilŽivotnije
             while (linija != null)
             {
                 string[] dijelovi = linija.Split('|');
-                if (dijelovi[1] == kriterij)
+                if (dijelovi[2] == kriterij)
                 {
                     lista.Add(linija);
                 }
