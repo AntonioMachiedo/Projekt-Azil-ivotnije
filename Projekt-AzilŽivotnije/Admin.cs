@@ -38,14 +38,28 @@ namespace Projekt_AzilŽivotnije
             return lista;
 
         }
-        public static void Obrisi(int indeks) 
+        public static void Obrisi(int indeks)
         {
-            List <string> lista = Ucitaj();
+            List<string> lista = Ucitaj();
             if (indeks >= 0 && indeks < lista.Count)
             {
                 lista.RemoveAt(indeks);
                 StreamWriter sw = new StreamWriter("azil.txt", false);
                 foreach (string redak in lista)
+                {
+                    sw.WriteLine(redak);
+                }
+                sw.Close();
+            }
+        }
+        public static void UdomiZivotinju(int indeks, string noviZapis)
+        {
+            List<string> sve = Ucitaj();
+            if (indeks >= 0 && indeks < sve.Count)
+            {
+                sve[indeks] = noviZapis;
+                StreamWriter sw = new StreamWriter("azil.txt", false);
+                foreach (string redak in sve)
                 {
                     sw.WriteLine(redak);
                 }
@@ -86,7 +100,7 @@ namespace Projekt_AzilŽivotnije
         }
         public static List<string> VrsteBroj()
         {
-            
+
             List<string> lista = Ucitaj();
             List<string> lista2 = Vrste();
             List<string> lista3 = new List<string>();
@@ -99,7 +113,7 @@ namespace Projekt_AzilŽivotnije
                 foreach (string linija in lista)
                 {
                     string[] dijelovi = linija.Split('|');
-                    if (dijelovi.Length>2 && dijelovi[2] == vrsta)
+                    if (dijelovi.Length > 2 && dijelovi[2] == vrsta&& dijelovi[6] =="Azil")
                     {
                         brojac++;
                     }
@@ -137,7 +151,7 @@ namespace Projekt_AzilŽivotnije
             while (linija != null)
             {
                 string[] dijelovi = linija.Split('|');
-                int dob = int.Parse(dijelovi[4]);
+                int dob = int.Parse(dijelovi[5]);
                 suma += dob;
                 brojac++;
                 linija = sr.ReadLine();
@@ -145,6 +159,34 @@ namespace Projekt_AzilŽivotnije
             sr.Close();
             double prosjek = (double)suma / brojac;
             return prosjek;
+        }
+        public static int BrojTrenutnih()
+        {
+            int brojac = 0;
+            List<string> sve = Ucitaj();
+            foreach (string redak in sve)
+            {
+                string[] d = redak.Split('|');
+                if (d.Length > 6 && d[6] == "Azil")
+                {
+                    brojac++;
+                }
+            }
+            return brojac;
+        }
+        public static int BrojUdomljenih()
+        {
+            int brojac = 0;
+            List<string> sve = Ucitaj();
+            foreach (string redak in sve)
+            {
+                string[] d = redak.Split('|');
+                if (d.Length > 6 && d[6] == "Udomljen")
+                {
+                    brojac++;
+                }
+            }
+            return brojac;
         }
     }
 }

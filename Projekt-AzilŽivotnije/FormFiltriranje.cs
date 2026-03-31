@@ -19,7 +19,8 @@ namespace Projekt_AzilŽivotnije
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            comboBox1.SelectedIndex = -1;
+            listBox1.Items.Clear();
         }
 
         private void FormFiltriranje_Load(object sender, EventArgs e)

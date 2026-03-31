@@ -47,7 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
-    <Compile Include="Životinja.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPocetna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,11 +94,17 @@
     <EmbeddedResource Include="FormFiltriranje.resx">
       <DependentUpon>FormFiltriranje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPocetna.resx">
       <DependentUpon>FormPocetna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPregled.resx">
       <DependentUpon>FormPregled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStatistika.resx">
+      <DependentUpon>FormStatistika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUdomi.resx">
       <DependentUpon>FormUdomi.cs</DependentUpon>

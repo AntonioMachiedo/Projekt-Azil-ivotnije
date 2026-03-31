@@ -16,7 +16,7 @@ namespace Projekt_AzilŽivotnije
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Gl_Izbornk());
+            Application.Run(new FormLogin());
         }
     }
 }
