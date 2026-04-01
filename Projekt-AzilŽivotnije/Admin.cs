@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Projekt_AzilŽivotnije
 {
@@ -123,6 +124,28 @@ namespace Projekt_AzilŽivotnije
 
             }
             return lista3;
+        }
+        public static void IzvozExcel()
+        {
+            try
+            {
+                List<string> sveLinije = Ucitaj();
+                string putanjaExcel = "Izvjestaj_Azil.csv";
+                using (StreamWriter sw = new StreamWriter(putanjaExcel, false, System.Text.Encoding.UTF8))
+                {
+                    sw.WriteLine("ID;Ime;Vrsta;Pasmina;Spol;Dob;Status;Slika;DatumDolaska;DatumUdomljavanja;Cijepljen;Kastriran;Napomena;Kontakt;Telefon");
+                    foreach (string linija in sveLinije)
+                    {
+                        string excelLinija = linija.Replace('|', ';');
+                        sw.WriteLine(excelLinija);
+                    }
+                }
+                MessageBox.Show("Podaci su uspješno izvezeni u Excel datoteku(Izvjestaj_Azil.csv)!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Došlo je do greške prilikom izvoza: " + ex.Message);
+            }
         }
         public static List<string> PronadiPoVrsti(string kriterij)
         {

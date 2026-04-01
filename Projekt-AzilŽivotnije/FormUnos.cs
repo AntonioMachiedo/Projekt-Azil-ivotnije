@@ -76,7 +76,7 @@ namespace Projekt_AzilŽivotnije
             bool kastriran = checkBox2.Checked;
             string napomena = textBox4.Text;
             string id = DateTime.Now.Ticks.ToString().Substring(10);
-            string zapis = $"{id}|{ime}|{vrsta}|{pasmina}|{spol}|{dob}|{status}|{putanjaSlike}|{datumDolaska}|{cijepljen}|{kastriran}|{napomena}||";
+            string zapis = $"{id}|{ime}|{vrsta}|{pasmina}|{spol}|{dob}|{status}|{putanjaSlike}|{datumDolaska}||{cijepljen}|{kastriran}|{napomena}||";
             Admin.Unos(zapis);
             MessageBox.Show("Životinja je uspješno unesena!");
             this.Close();
